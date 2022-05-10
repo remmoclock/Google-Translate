@@ -1,7 +1,15 @@
-function TextBox() {
+import SelectDropDown from "./SelectDropDown";
+
+function TextBox({ style }) {
   return (
-    <div>TextBox</div>
-  )
+    <div>
+      <SelectDropDown />
+      <textarea
+        placeholder={style === "input" ? "Entrez du texte" : "Traduction"}
+        disabled={style === "output"}
+      />
+    </div>
+  );
 }
 
-export default TextBox
+export default TextBox;
