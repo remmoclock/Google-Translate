@@ -1,13 +1,12 @@
-import Arrows from "./Components/Arrows";
 import TextBox from "./Components/TextBox";
-import Button from "./Components/Button";
-import Modal from "./Components/Modal";
+import Arrows from "./Components/Arrows";
 
 function App() {
   return (
     <div className="app">
-    <TextBox style={'input'} />
-    <TextBox style={'output'} />
+      <TextBox style="input" />
+      <Arrows />
+      <TextBox style="output" />
     </div>
   );
 }
