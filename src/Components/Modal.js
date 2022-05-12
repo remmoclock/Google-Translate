@@ -1,6 +1,7 @@
 import { useState } from "react";
 
-function Modal({ setShowModal }) {
+function Modal({ setShowModal, languages }) {
+  console.log('languages modal',languages);
   const [searchedLanguage, setSearchedLanguage] = useState();
 
   const handleChange = (e) => {
