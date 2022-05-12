@@ -11,6 +11,8 @@ function App() {
   const [outputLanguage, setOutputLanguage] = useState("English");
   const [languages, setLanguages] = useState();
 
+console.log(process.env);
+
 
   //Api
   const getLanguages = () => {
@@ -18,8 +20,8 @@ function App() {
       method: "GET",
       url: "https://google-translate20.p.rapidapi.com/languages",
       headers: {
-        "X-RapidAPI-Host": process.env.REACT_APP_GOOGLE_HOST_API,
-        "X-RapidAPI-Key": process.env.REACT_APP_GOOGLE_KEY_API,
+        "X-RapidAPI-Host": "google-translate20.p.rapidapi.com",
+        "X-RapidAPI-Key": "dff427a5b5mshdc656cb0e3fd1fap1a6b02jsn260cef193e33",
       },
     };
 
