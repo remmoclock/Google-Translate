@@ -11,8 +11,7 @@ function App() {
   const [outputLanguage, setOutputLanguage] = useState("English");
   const [languages, setLanguages] = useState();
 
-console.log(process.env);
-
+  console.log(process.env);
 
   //Api
   const getLanguages = () => {
@@ -70,7 +69,18 @@ console.log(process.env);
           />
         </>
       )}
-      {showModal && <Modal setShowModal={setShowModal} languages={languages} />}
+      {showModal && (
+        <Modal
+          setShowModal={setShowModal}
+          languages={languages}
+          chosenLanguage={
+            showModal === "input" ? inputLanguage : outputLanguage
+          }
+          setChosenLanguage={
+            showModal === "input" ? setInputLanguage : setOutputLanguage
+          }
+        />
+      )}
     </div>
   );
 }
