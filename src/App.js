@@ -4,10 +4,16 @@ import Arrows from "./Components/Arrows";
 import Modal from "./Components/Modal";
 
 function App() {
+  //Hooks
   const [showModal, setShowModal] = useState();
   const [inputLanguage, setInputLanguage] = useState("French");
   const [outputLanguage, setOutputLanguage] = useState("English");
 
+  //Api 
+  // const getLanguages = async () => {
+
+  // }
+  // Func
   const handleClick = () => {
     setInputLanguage(outputLanguage);
     setOutputLanguage(inputLanguage);
