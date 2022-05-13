@@ -58,6 +58,8 @@ textarea {
   color: #8ab4f8;
   padding: 5px 15px;
   font-size: 15px;
+  cursor: pointer;
+  
 }
 
 .select-drop-down .down-arrow svg {
@@ -67,6 +69,7 @@ textarea {
   width: 26px;
   height: 26px;
   fill: #8ab4f8;
+  cursor: pointer;
 }
 
 .arrow-container {
@@ -77,6 +80,7 @@ textarea {
   width: 26px;
   height: 26px;
   fill: #5a5a5d;
+  cursor: pointer;
 }
 
 .option-list {
@@ -105,6 +109,7 @@ textarea {
   height: 30px;
   padding: 6px;
   fill: #5a5a5d;
+  cursor: pointer;
 }
 
 .option-container {
