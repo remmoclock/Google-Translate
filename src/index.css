@@ -143,3 +143,9 @@ textarea {
   width: 11px;
   color: #8ab4f8;
 }
+
+.button-container {
+  color:#bdc1c6;
+  padding: 18px;
+  height: 20px;
+}
