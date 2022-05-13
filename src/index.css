@@ -148,4 +148,15 @@ textarea {
   color:#bdc1c6;
   padding: 18px;
   height: 20px;
+  cursor: pointer;
+}
+
+.input .delete {
+  position: relative;
+  left: 265px;
+  top: -156px;
+  font-size: 50px;
+  color:#bdc1c6;
+  padding-left: 40px;
+  cursor: pointer;
 }

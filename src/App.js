@@ -65,7 +65,7 @@ function App() {
       .request(options)
       .then(function (response) {
         console.log(response.data);
-        setTranslatedText(response.data);
+        setTranslatedText(response.data.data.translation);
       })
       .catch(function (error) {
         console.error(error);
@@ -87,6 +87,8 @@ function App() {
             style="input"
             selectedLanguage={inputLanguage}
             setShowModal={setShowModal}
+            setTextToTranslate={setTextToTranslate}
+            textToTranslate={textToTranslate}
           />
           <div className="arrow-container" onClick={handleClick}>
             <Arrows />
@@ -95,6 +97,8 @@ function App() {
             style="output"
             selectedLanguage={outputLanguage}
             setShowModal={setShowModal}
+            translatedText={translatedText}
+            setTranslatedText={setTranslatedText}
           />
           <div className="button-container" onClick={translate}>
             <Button />
