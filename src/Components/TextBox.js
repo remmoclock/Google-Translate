@@ -9,10 +9,12 @@ function TextBox({
   translatedText,
   setTranslatedText,
 }) {
+
   const handleClick = () => {
     setTextToTranslate("");
     setTranslatedText("");
   };
+  
   return (
     <div className={style}>
       <SelectDropDown
@@ -21,6 +23,7 @@ function TextBox({
         style={style}
       />
       <textarea
+        className={style}
         placeholder={style === "input" ? "Entrez du texte" : "Traduction"}
         disabled={style === "output"}
         onChange={(e) => setTextToTranslate(e.target.value)}
