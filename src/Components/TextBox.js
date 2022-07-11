@@ -27,7 +27,8 @@ function TextBox({
         placeholder={style === "input" ? "Entrez du texte" : "Traduction"}
         disabled={style === "output"}
         onChange={(e) => setTextToTranslate(e.target.value)}
-        value={style === "input" ? textToTranslate : translatedText}
+        defaultValue={style === "input" ? textToTranslate : translatedText}
+       
       />
       {style === "input" && (
         <div className="delete" onClick={handleClick}>

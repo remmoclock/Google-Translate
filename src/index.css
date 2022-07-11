@@ -150,10 +150,14 @@ textarea {
 }
 
 .button-container {
-  color:#bdc1c6;
   padding: 18px;
   height: 20px;
   cursor: pointer;
+  transform: scale(1.5);
+}
+
+.button-container:hover {
+  transform: scale(1.9); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
 
 .input .delete {

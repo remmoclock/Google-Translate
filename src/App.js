@@ -105,9 +105,7 @@ function App() {
     setInputLanguage(outputLanguage);
     setOutputLanguage(inputLanguage);
   };
-  return loader ? (
-    <Loader />
-  ) : (
+  return (
     <div className="app">
       {!showModal && (
         <>
@@ -127,10 +125,14 @@ function App() {
             setShowModal={setShowModal}
             translatedText={translatedText}
             setTranslatedText={setTranslatedText}
-          />
-          <div className="button-container" onClick={translate}>
-            <Button />
-          </div>
+          />{" "}
+          {loader ? (
+            <Loader />
+          ) : (
+            <div className="button-container" onClick={translate}>
+              <Button />
+            </div>
+          )}
         </>
       )}
       {showModal && (
