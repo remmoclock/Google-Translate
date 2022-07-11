@@ -5,12 +5,12 @@ const cors = require("cors");
 require("dotenv").config();
 console.log(process.env);
 const app = express();
-const path = require("path");
+// const path = require("path");
 
 
 //This will create a middleware.
 //When you navigate to the root page, it would use the built react-app
-app.use(express.static(path.resolve(__dirname, "./client/build")));
+// app.use(express.static(path.resolve(__dirname, "./client/build")));
 
 app.use(cors());
 
