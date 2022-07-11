@@ -21,7 +21,7 @@ function Modal({ setShowModal, languages, chosenLanguage, setChosenLanguage }) {
   return (
     <div className="option-list">
       <div className="search-bar">
-        <input onChange={handleChange}  defaultValue={searchedLanguage} />
+        <input onChange={handleChange} value={searchedLanguage} />
         <div className="close-button" onClick={() => setShowModal(null)}>
           <svg
             focusable="false"

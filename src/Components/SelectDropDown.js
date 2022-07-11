@@ -1,7 +1,7 @@
 function SelectDropDown({ selectedLanguage, style, setShowModal }) {
   return (
     <div className="select-drop-down" onClick={() => setShowModal(style)}>
-      <input  defaultValue={selectedLanguage} />
+      <input value={selectedLanguage} />
       <div className="down-arrow">
         <svg
           focusable="false"
