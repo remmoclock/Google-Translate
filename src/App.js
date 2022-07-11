@@ -4,6 +4,7 @@ import Arrows from "./Components/Arrows";
 import Modal from "./Components/Modal";
 import Button from "./Components/Button";
 import axios from "axios";
+import Loader from "./Components/Loader";
 
 function App() {
   //Hooks
@@ -13,6 +14,7 @@ function App() {
   const [languages, setLanguages] = useState();
   const [textToTranslate, setTextToTranslate] = useState();
   const [translatedText, setTranslatedText] = useState();
+  const [loader, setLoader] = useState(false);
 
   console.log(process.env);
 
@@ -80,26 +82,32 @@ function App() {
   // };
   // console.log("translate", translatedText);
 
-// Backend call 
+  // Backend call
 
-const translate = async () => {
-  console.log('translate')
-  const data = {
-    textToTranslate, outputLanguage, inputLanguage
-  }
-  const response = await axios.get('http://localhost:8000/translation', {
-    params : data
-  })
-  console.log('response', response)
-  setTranslatedText(response.data)
-}
+  const translate = async () => {
+    console.log("translate");
+    setLoader(true);
+    const data = {
+      textToTranslate,
+      outputLanguage,
+      inputLanguage,
+    };
+    const response = await axios.get("http://localhost:8000/translation", {
+      params: data,
+    });
+    console.log("response", response);
+    setTranslatedText(response.data);
+    setLoader(false);
+  };
 
   // Func
   const handleClick = () => {
     setInputLanguage(outputLanguage);
     setOutputLanguage(inputLanguage);
   };
-  return (
+  return loader ? (
+    <Loader />
+  ) : (
     <div className="app">
       {!showModal && (
         <>
