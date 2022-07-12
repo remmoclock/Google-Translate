@@ -16,7 +16,6 @@ function App() {
   const [translatedText, setTranslatedText] = useState();
   const [loader, setLoader] = useState(false);
 
-  console.log(process.env);
 
   //Api
   // const getLanguages = () => {
