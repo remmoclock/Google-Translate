@@ -126,7 +126,7 @@ function App() {
             setShowModal={setShowModal}
             translatedText={translatedText}
             setTranslatedText={setTranslatedText}
-          />{" "}
+          />
           {loader ? (
             <Loader />
           ) : (
