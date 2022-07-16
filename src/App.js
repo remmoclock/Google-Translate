@@ -46,7 +46,7 @@ function App() {
   // Backend call
 
   const getLanguages = async () => {
-    const response = await axios("https://google-traduction.netlify.app/languages");
+    const response = await axios("https://git.heroku.com/google-traduction.git/languages");
     setLanguages(response.data);
   };
 
@@ -92,7 +92,7 @@ function App() {
       outputLanguage,
       inputLanguage,
     };
-    const response = await axios.get("https://google-traduction.netlify.app/translation", {
+    const response = await axios.get("https://git.heroku.com/google-traduction.git/translation", {
       params: data,
     });
     console.log("response", response);
