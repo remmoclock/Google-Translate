@@ -1,4 +1,4 @@
-const PORT = 8000;
+const PORT = process.env.PORT || 8000;
 const axios = require("axios").default;
 const express = require("express");
 const cors = require("cors");
@@ -9,6 +9,15 @@ const app = express();
 app.use(cors());
 
 app.listen(PORT, () => console.log("Server run on port " + PORT));
+
+if (process.env.NODE_ENV == "production") {
+  app.use(express.static(path.join(__dirname, "/build")));
+  const path = require("path");
+
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "/build", "index.html"));
+  });
+}
 
 app.get("/languages", async (req, res) => {
   const options = {
