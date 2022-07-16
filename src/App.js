@@ -86,6 +86,7 @@ function App() {
   // Backend call
 
   const translate = async () => {
+    setLoader(true);
     console.log("translate");
     const data = {
       textToTranslate,
