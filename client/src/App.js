@@ -46,7 +46,7 @@ function App() {
   // Backend call
 
   const getLanguages = async () => {
-    const response = await axios("https://git.heroku.com/google-traduction.git/languages");
+    const response = await axios("https://google-traduction.herokuapp.com/languages");
     setLanguages(response.data);
   };
 
@@ -93,7 +93,7 @@ function App() {
       outputLanguage,
       inputLanguage,
     };
-    const response = await axios.get("https://git.heroku.com/google-traduction.git/translation", {
+    const response = await axios.get("https://google-traduction.herokuapp.com/translation", {
       params: data,
     });
     console.log("response", response);
