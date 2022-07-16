@@ -11,7 +11,7 @@ app.use(cors());
 app.listen(PORT, () => console.log("Server run on port " + PORT));
 
 app.use(
-  express.static(path.join(__dirname, "/client"))
+  express.static(path.join(__dirname, "/client/build"))
 );
 
 app.get("*", (req, res) => {
