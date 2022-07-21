@@ -4,6 +4,7 @@ const cors = require("cors");
 require("dotenv").config();
 const app = express();
 const axios = require("axios").default;
+const path = require('path');
 
 app.use(cors());
 
@@ -11,15 +12,15 @@ app.listen(PORT, () => console.log("Server run on port " + PORT));
 
 
 
-// app.use(
-//   express.static(path.join(__dirname, "/client/build"))
-// );
+app.use(
+  express.static(path.join(__dirname, "/client/build"))
+);
 
-// app.get("*", (req, res) => {
-//   res.sendFile(
-//     path.join(__dirname, "/client/build", "index.html")
-//   );
-// });
+app.get("*", (req, res) => {
+  res.sendFile(
+    path.join(__dirname, "/client/build", "index.html")
+  );
+});
 
 
 app.get("/languages", async (req, res) => {
