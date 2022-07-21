@@ -46,7 +46,7 @@ function App() {
   // Backend call
 
   const getLanguages = async () => {
-    const response = await axios("https://git.heroku.com/google-traduction.git/languages");
+    const response = await axios("http://localhost:8000/languages");
     setLanguages(response.data);
   };
 
@@ -58,7 +58,7 @@ function App() {
   //   setLoader(true);
   //   const options = {
   //     method: "GET",
-  //     url: "https://google-translate20.p.rapidapi.com/translate",
+  //     url: "http://google-translate20.p.rapidapi.com/translate",
   //     params: {
   //       text: textToTranslate,
   //       tl: outputLanguage,
@@ -93,7 +93,7 @@ function App() {
       outputLanguage,
       inputLanguage,
     };
-    const response = await axios.get("https://git.heroku.com/google-traduction.git/translation", {
+    const response = await axios.get("http://localhost:8000/translation", {
       params: data,
     });
     console.log("response", response);

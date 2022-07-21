@@ -1,24 +1,22 @@
-const PORT = process.env.PORT || 8000;
-const axios = require("axios").default;
 const express = require("express");
+const PORT = process.env.PORT || 8000;
 const cors = require("cors");
 require("dotenv").config();
-console.log(process.env);
 const app = express();
+const axios = require("axios").default;
 
 app.use(cors());
 
-app.listen(PORT, () => console.log("Server run on port " + PORT));
 
-app.use(
-  express.static(path.join(__dirname, "/client/build"))
-);
+// app.use(
+//   express.static(path.join(__dirname, "/client/build"))
+// );
 
-app.get("*", (req, res) => {
-  res.sendFile(
-    path.join(__dirname, "/client/build", "index.html")
-  );
-});
+// app.get("*", (req, res) => {
+//   res.sendFile(
+//     path.join(__dirname, "/client/build", "index.html")
+//   );
+// });
 
 // if (process.env.NODE_ENV == "production") {
 //   app.use(express.static("client/build"));
@@ -28,12 +26,15 @@ app.get("*", (req, res) => {
 //   });
 // }
 
+
+
+
 app.get("/languages", async (req, res) => {
   const options = {
     method: "GET",
     headers: {
-      "X-RapidAPI-Host": process.env.RAPID_API_HOST,
-      "X-RapidAPI-Key": process.env.RAPID_API_KEY,
+      "X-RapidAPI-Host": process.env.REACT_APP_GOOGLE_HOST_API,
+      "X-RapidAPI-Key": process.env.REACT_APP_GOOGLE_KEY_API,
     },
   };
 
@@ -63,8 +64,8 @@ app.get("/translation", async (req, res) => {
       sl: inputLanguage,
     },
     headers: {
-      "x-rapidapi-host": process.env.RAPID_API_HOST,
-      "x-rapidapi-key": process.env.RAPID_API_KEY,
+      "x-rapidapi-host": process.env.REACT_APP_GOOGLE_HOST_API,
+      "x-rapidapi-key": process.env.REACT_APP_GOOGLE_KEY_API,
     },
   };
 
@@ -79,3 +80,5 @@ app.get("/translation", async (req, res) => {
     res.status(500).json({ message: err });
   }
 });
+
+app.listen(PORT, () => console.log("Server run on port " + PORT));
