@@ -4,23 +4,29 @@ const cors = require("cors");
 require("dotenv").config();
 const app = express();
 const axios = require("axios").default;
-const path = require('path');
 
 app.use(cors());
 
-app.listen(PORT, () => console.log("Server run on port " + PORT));
+
+// app.use(
+//   express.static(path.join(__dirname, "/client/build"))
+// );
+
+// app.get("*", (req, res) => {
+//   res.sendFile(
+//     path.join(__dirname, "/client/build", "index.html")
+//   );
+// });
+
+if (process.env.NODE_ENV == "production") {
+  app.use(express.static("client/build"));
+  const path = require("path");
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+  });
+}
 
 
-
-app.use(
-  express.static(path.join(__dirname, "/client/build"))
-);
-
-app.get("*", (req, res) => {
-  res.sendFile(
-    path.join(__dirname, "/client/build", "index.html")
-  );
-});
 
 
 app.get("/languages", async (req, res) => {
@@ -75,3 +81,4 @@ app.get("/translation", async (req, res) => {
   }
 });
 
+app.listen(PORT, () => console.log("Server run on port " + PORT));
