@@ -34,14 +34,13 @@ function Modal({ setShowModal, languages, chosenLanguage, setChosenLanguage }) {
       </div>
       <div className="option-container">
         <ul>
-          {filteredLanguages?.map((filteredLanguage, _index) => {
+          {filteredLanguages?.map((filteredLanguage, ix) => {
             return (
-              <div className="list-item">
+              <div className="list-item" key={ix}>
                 <div className="icon">
                   {chosenLanguage === filteredLanguage && "✓"}
                 </div>
                 <li
-                  key={_index}
                   onClick={handleClick}
                   style={{ color: chosenLanguage && "#8ab4f8" }}
                 >
