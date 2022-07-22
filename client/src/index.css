@@ -162,12 +162,16 @@ textarea {
 
 .input .delete {
   position: relative;
-  left: 265px;
-  top: -156px;
+  left: 229px;
+  top: -40px;
   font-size: 50px;
-  color:#bdc1c6;
+  color:#686a73;
   padding-left: 40px;
   cursor: pointer;
+}
+.input .delete:hover {
+
+  color:#bbbec8;
 }
 
 @media screen and (max-width : 700px) {
