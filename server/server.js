@@ -6,8 +6,6 @@ const app = express();
 const axios = require("axios").default;
 const path = require("path")
 
-console.log("process.env", process.env);
-
 app.use(cors());
 
 app.use(
